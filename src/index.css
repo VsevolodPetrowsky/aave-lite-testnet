@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-size: 16px;
+
+  /* Aave Lite Design Tokens */
+  --bg: #F7F8FA;
+  --card: #FFFFFF;
+  --text: #0B1220;
+  --subtext: #5B667A;
+  --primary: #2F6FED;
+  --primary-weak: #E7EEFF;
+  --success: #2FBF71;
+  --warning: #FFB020;
+  --danger: #E5484D;
+  --border: #E6E9EE;
+  --input: #F3F5F8;
+
+  /* Map to Tailwind color system */
+  --background: #F7F8FA;
+  --foreground: #0B1220;
+  --card-foreground: #0B1220;
+  --popover: #FFFFFF;
+  --popover-foreground: #0B1220;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3F5F8;
+  --secondary-foreground: #0B1220;
+  --muted: #F3F5F8;
+  --muted-foreground: #5B667A;
+  --accent: #E7EEFF;
+  --accent-foreground: #2F6FED;
+  --destructive: #E5484D;
+  --destructive-foreground: #ffffff;
+  --input-background: #F3F5F8;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #2F6FED;
+  --radius: 0.75rem;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+* {
+  border-color: var(--border);
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+}
+
+input {
+  font-size: 1rem;
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+}
