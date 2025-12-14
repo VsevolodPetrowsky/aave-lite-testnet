@@ -1,40 +1,42 @@
 # Aave Lite Testnet
 
-Минималистичный интерфейс для взаимодействия с протоколом Aave V3 на тестовой сети Sepolia.
+[🇷🇺 Русская версия](README_RU.md)
 
-## Что это?
+A minimalist interface for interacting with the Aave V3 protocol on the Sepolia testnet.
 
-Веб-приложение позволяет:
-- **Deposit (Депозит)** - вносить токены в Aave для получения процентов
-- **Withdraw (Вывод)** - выводить свои депозиты
-- **Borrow (Займ)** - брать токены в долг под залог депозита
-- **Repay (Погашение)** - погашать займы
+## What is this?
 
-## Поддерживаемые токены
+A web application that allows you to:
+- **Deposit** - deposit tokens into Aave to earn interest
+- **Withdraw** - withdraw your deposits
+- **Borrow** - borrow tokens using your deposit as collateral
+- **Repay** - repay your loans
 
-На Aave Sepolia работают следующие токены:
+## Supported Tokens
+
+The following tokens work on Aave Sepolia:
 - **LINK** - Chainlink Token
 - **WBTC** - Wrapped Bitcoin
 - **AAVE** - Aave Token
 
-> **Внимание:** DAI и USDC на Aave Sepolia временно заморожены (ошибка 51 - RESERVE_INACTIVE)
+> **Note:** DAI and USDC are temporarily frozen on Aave Sepolia (error 51 - RESERVE_INACTIVE)
 
-## Технологии
+## Technologies
 
-- **React 18** + **TypeScript**
-- **Vite** - сборщик
-- **wagmi v2** + **viem** - работа с блокчейном
-- **RainbowKit** - подключение кошелька
-- **Tailwind CSS** - стили
-- **shadcn/ui** - UI компоненты
-- **Vitest** - юнит тесты
-- **Playwright** + **Synpress** - E2E тесты с MetaMask
+- **React 19** + **TypeScript**
+- **Vite** - bundler
+- **wagmi v2** + **viem** - blockchain interaction
+- **RainbowKit** - wallet connection
+- **Tailwind CSS** - styling
+- **shadcn/ui** - UI components
+- **Vitest** - unit tests
+- **Playwright** + **Synpress** - E2E tests with MetaMask
 
 ---
 
-## Быстрый старт
+## Quick Start
 
-### 1. Клонирование и установка
+### 1. Clone and Install
 
 ```bash
 git clone <repo-url>
@@ -42,220 +44,220 @@ cd aave-lite-testnet
 npm install
 ```
 
-### 2. Настройка окружения
+### 2. Environment Setup
 
-Создайте файл `.env` в корне проекта:
+Create a `.env` file in the project root:
 
 ```env
-# Seed фраза тестового кошелька (только для E2E тестов!)
+# Seed phrase for test wallet (for E2E tests only!)
 SEED_PHRASE="your twelve word seed phrase here for testing only"
 ```
 
-> **ВАЖНО:** Используйте ТОЛЬКО тестовый кошелёк! Никогда не используйте основной кошелёк.
+> **IMPORTANT:** Use ONLY a test wallet! Never use your main wallet.
 
-### 3. Получение тестовых токенов
+### 3. Getting Test Tokens
 
-1. Получите Sepolia ETH для газа: https://sepoliafaucet.com/
-2. Получите тестовые LINK: https://faucets.chain.link/sepolia
-3. Получите тестовые токены Aave: https://staging.aave.com/faucet/
+1. Get Sepolia ETH for gas: https://sepoliafaucet.com/
+2. Get test LINK: https://faucets.chain.link/sepolia
+3. Get Aave test tokens: https://staging.aave.com/faucet/
 
-### 4. Запуск приложения
+### 4. Run the Application
 
 ```bash
 npm run dev
 ```
 
-Откройте http://localhost:5173 в браузере.
+Open http://localhost:5173 in your browser.
 
 ---
 
-## Использование приложения
+## Using the Application
 
-### Подключение кошелька
+### Connecting Your Wallet
 
-1. Нажмите "Connect Wallet"
-2. Выберите MetaMask
-3. Подтвердите подключение
-4. Переключитесь на сеть Sepolia (если попросит)
+1. Click "Connect Wallet"
+2. Select MetaMask
+3. Confirm the connection
+4. Switch to Sepolia network (if prompted)
 
-### Депозит токенов
+### Depositing Tokens
 
-1. В разделе "Your tokens" найдите нужный токен (LINK, WBTC, AAVE)
-2. Нажмите "Deposit"
-3. Введите сумму или нажмите "Max"
-4. Нажмите "Approve & Deposit" (первый раз нужен approve)
-5. Подтвердите транзакции в MetaMask
-6. Дождитесь подтверждения
+1. In the "Your tokens" section, find the desired token (LINK, WBTC, AAVE)
+2. Click "Deposit"
+3. Enter the amount or click "Max"
+4. Click "Approve & Deposit" (approval is required for the first time)
+5. Confirm the transactions in MetaMask
+6. Wait for confirmation
 
-### Вывод токенов
+### Withdrawing Tokens
 
-1. В таблице "Your Supplies" найдите позицию
-2. Нажмите "Withdraw"
-3. Введите сумму
-4. Подтвердите транзакцию
+1. In the "Your Supplies" table, find your position
+2. Click "Withdraw"
+3. Enter the amount
+4. Confirm the transaction
 
-### Займ токенов
+### Borrowing Tokens
 
-1. Сначала сделайте депозит (это будет залог)
-2. В форме "Borrow" выберите токен
-3. Введите сумму (не больше доступного лимита)
-4. Подтвердите транзакцию
+1. First make a deposit (this will be your collateral)
+2. In the "Borrow" form, select a token
+3. Enter the amount (not more than the available limit)
+4. Confirm the transaction
 
-### Погашение займа
+### Repaying a Loan
 
-1. В таблице "Your Borrows" найдите позицию
-2. Нажмите "Repay"
-3. Введите сумму
-4. Нажмите "Approve & Repay"
-5. Подтвердите транзакции
+1. In the "Your Borrows" table, find your position
+2. Click "Repay"
+3. Enter the amount
+4. Click "Approve & Repay"
+5. Confirm the transactions
 
 ---
 
-## Тестирование
+## Testing
 
-### Юнит тесты
+### Unit Tests
 
-Запуск всех юнит тестов:
+Run all unit tests:
 ```bash
 npm run test:run
 ```
 
-Запуск в watch режиме:
+Run in watch mode:
 ```bash
 npm run test
 ```
 
-Юнит тесты покрывают:
-- `useDeposit` - хук депозита
-- `useWithdraw` - хук вывода
-- `useBorrow` - хук займа/погашения
-- `DepositForm` - компонент формы депозита
-- `WithdrawForm` - компонент формы вывода
+Unit tests cover:
+- `useDeposit` - deposit hook
+- `useWithdraw` - withdraw hook
+- `useBorrow` - borrow/repay hook
+- `DepositForm` - deposit form component
+- `WithdrawForm` - withdraw form component
 
-### E2E тесты (с MetaMask)
+### E2E Tests (with MetaMask)
 
-E2E тесты используют Synpress v4 для автоматизации MetaMask.
+E2E tests use Synpress v4 for MetaMask automation.
 
-#### Требования
+#### Requirements
 
 - Node.js 18+
-- Установленный Chromium (устанавливается автоматически)
-- Тестовый кошелёк с токенами на Sepolia
+- Chromium installed (installs automatically)
+- Test wallet with tokens on Sepolia
 
-#### Настройка
+#### Setup
 
-1. Убедитесь что `.env` содержит `SEED_PHRASE`
-2. На кошельке должны быть:
-   - Sepolia ETH для газа
-   - LINK токены для тестов
+1. Make sure `.env` contains `SEED_PHRASE`
+2. The wallet should have:
+   - Sepolia ETH for gas
+   - LINK tokens for tests
 
-#### Запуск E2E тестов
+#### Running E2E Tests
 
-Запуск всех E2E тестов:
+Run all E2E tests:
 ```bash
 npm run test:e2e
 ```
 
-Запуск конкретной группы тестов:
+Run specific test groups:
 ```bash
-# Только тесты депозита
+# Deposit tests only
 npm run test:e2e -- --grep "Deposit"
 
-# Только тесты вывода
+# Withdraw tests only
 npm run test:e2e -- --grep "Withdraw"
 
-# Только тесты займа
+# Borrow tests only
 npm run test:e2e -- --grep "Borrow"
 
-# Только тесты погашения
+# Repay tests only
 npm run test:e2e -- --grep "Repay"
 ```
 
-#### Что тестируется (23 теста)
+#### What's Being Tested (23 tests)
 
-| Группа | Тесты | Описание |
-|--------|-------|----------|
-| Connection | 2 | Подключение кошелька |
-| Token Balances | 2 | Отображение балансов |
-| Deposit Flow | 4 | Полный флоу депозита LINK и WBTC |
-| Positions | 2 | Отображение позиций |
-| Withdraw Flow | 3 | Вывод токенов |
-| Borrow Flow | 3 | Займ токенов |
-| Repay Flow | 2 | Погашение займов |
-| Account Overview | 2 | Обзор аккаунта |
-| Error Handling | 2 | Обработка ошибок |
+| Group | Tests | Description |
+|-------|-------|-------------|
+| Connection | 2 | Wallet connection |
+| Token Balances | 2 | Balance display |
+| Deposit Flow | 4 | Complete LINK and WBTC deposit flow |
+| Positions | 2 | Position display |
+| Withdraw Flow | 3 | Token withdrawal |
+| Borrow Flow | 3 | Token borrowing |
+| Repay Flow | 2 | Loan repayment |
+| Account Overview | 2 | Account overview |
+| Error Handling | 2 | Error handling |
 
-#### Просмотр отчёта
+#### Viewing the Report
 
-После запуска тестов:
+After running tests:
 ```bash
 npx playwright show-report
 ```
 
 ---
 
-## Структура проекта
+## Project Structure
 
 ```
 aave-lite-testnet/
 ├── src/
-│   ├── components/          # React компоненты
-│   │   ├── ui/              # shadcn/ui компоненты
-│   │   ├── DepositForm.tsx  # Форма депозита
-│   │   ├── WithdrawForm.tsx # Форма вывода
-│   │   ├── BorrowForm.tsx   # Форма займа
-│   │   ├── RepayForm.tsx    # Форма погашения
+│   ├── components/          # React components
+│   │   ├── ui/              # shadcn/ui components
+│   │   ├── DepositForm.tsx  # Deposit form
+│   │   ├── WithdrawForm.tsx # Withdraw form
+│   │   ├── BorrowForm.tsx   # Borrow form
+│   │   ├── RepayForm.tsx    # Repay form
 │   │   └── ...
-│   ├── hooks/               # React хуки
-│   │   ├── useDeposit.ts    # Логика депозита
-│   │   ├── useWithdraw.ts   # Логика вывода
-│   │   ├── useBorrow.ts     # Логика займа/погашения
-│   │   ├── usePositions.ts  # Позиции пользователя
+│   ├── hooks/               # React hooks
+│   │   ├── useDeposit.ts    # Deposit logic
+│   │   ├── useWithdraw.ts   # Withdraw logic
+│   │   ├── useBorrow.ts     # Borrow/repay logic
+│   │   ├── usePositions.ts  # User positions
 │   │   └── ...
-│   ├── config/              # Конфигурация
-│   │   └── contracts.ts     # Адреса контрактов и ABI
-│   └── utils/               # Утилиты
-├── e2e/                     # E2E тесты
-│   └── aave.spec.ts         # Тесты с MetaMask
-├── .env                     # Переменные окружения
+│   ├── config/              # Configuration
+│   │   └── contracts.ts     # Contract addresses and ABI
+│   └── utils/               # Utilities
+├── e2e/                     # E2E tests
+│   └── aave.spec.ts         # MetaMask tests
+├── .env                     # Environment variables
 └── package.json
 ```
 
 ---
 
-## Скрипты
+## Scripts
 
-| Команда | Описание |
-|---------|----------|
-| `npm run dev` | Запуск dev сервера |
-| `npm run build` | Сборка для продакшена |
-| `npm run preview` | Просмотр сборки |
-| `npm run test` | Юнит тесты (watch) |
-| `npm run test:run` | Юнит тесты (однократно) |
-| `npm run test:e2e` | E2E тесты |
-| `npm run lint` | Проверка линтером |
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview build |
+| `npm run test` | Unit tests (watch) |
+| `npm run test:run` | Unit tests (single run) |
+| `npm run test:e2e` | E2E tests |
+| `npm run lint` | Lint check |
 
 ---
 
-## Особенности реализации
+## Implementation Details
 
-### Автоматический Approve + Deposit/Repay
+### Automatic Approve + Deposit/Repay
 
-При недостаточном allowance автоматически:
-1. Запрашивается approve
-2. После подтверждения сразу выполняется deposit/repay
+When allowance is insufficient, automatically:
+1. Approval is requested
+2. After confirmation, deposit/repay is executed immediately
 
-### Дедупликация тостов
+### Toast Deduplication
 
-Используется `useRef<Set<string>>` для отслеживания показанных уведомлений по hash транзакции, чтобы избежать дублирования.
+Uses `useRef<Set<string>>` to track shown notifications by transaction hash to avoid duplicates.
 
-### Отслеживание статуса транзакции
+### Transaction Status Tracking
 
-Проверяется `receipt.status === 'success'` для определения успеха транзакции, а не только `isSuccess` от wagmi.
+Checks `receipt.status === 'success'` to determine transaction success, not just `isSuccess` from wagmi.
 
-### Auto-select токена в RepayForm
+### Auto-select Token in RepayForm
 
-Если у пользователя нет долга по выбранному токену, автоматически выбирается первый токен с долгом.
+If the user has no debt for the selected token, the first token with debt is automatically selected.
 
 ---
 
@@ -263,17 +265,16 @@ aave-lite-testnet/
 
 ### "Reserve is inactive" (Error 51)
 
-DAI и USDC заморожены на Aave Sepolia. Используйте LINK, WBTC или AAVE.
+DAI and USDC are frozen on Aave Sepolia. Use LINK, WBTC, or AAVE.
 
-### Транзакция зависла
+### Transaction is Stuck
 
-1. Проверьте что достаточно ETH для газа
-2. Попробуйте увеличить газ в MetaMask
-3. Отмените транзакцию и повторите
+1. Check that you have enough ETH for gas
+2. Try increasing gas in MetaMask
+3. Cancel the transaction and retry
 
-### Тесты падают
+### Tests are Failing
 
-1. Убедитесь что `SEED_PHRASE` корректная
-2. Проверьте баланс тестовых токенов
-3. Запустите `npx playwright install` для обновления браузеров
-
+1. Make sure `SEED_PHRASE` is correct
+2. Check test token balance
+3. Run `npx playwright install` to update browsers
